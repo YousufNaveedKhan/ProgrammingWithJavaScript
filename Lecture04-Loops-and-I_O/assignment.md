@@ -1,7 +1,7 @@
-# JavaScript – Assignment 04
+# JavaScript – Assignment 03
 
 **Topics:** Loops, Nested Loops, Patterns, `prompt()`, and Basic Calculator  
-**Submission Deadline:** Monday, 16 November 2026
+**Submission Deadline:** Friday, 20 November 2026
 
 Dear Students,
 
