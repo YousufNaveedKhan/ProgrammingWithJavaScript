@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lec09 - DOM and Events</title>
+</head>
+<body>
+    <h2 id="heading">HELLO</h2>
+    <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eum quasi quisquam aut, iure veritatis dolores nihil voluptate nulla vel fugit est qui, iste accusamus fuga, voluptas rem eos magni magnam.</p>
+    <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque minus accusamus molestias excepturi magni perspiciatis sapiente ut! Sit minus magni atque dolorem architecto minima doloremque!</p>
+
+    <button id="btn">See More</button><br>
+
+    <img src="images/old.jpg" alt="Old Photo" width="150" height="150" id="photo">
+
+    <ul id="studentsList"></ul>
+    <script>
+        // 1. Selecting HTML Elements
+        var heading = document.getElementById("heading");
+        console.log(heading);
+
+        var desc = document.getElementsByClassName("description");
+        console.log(desc[0]);
+
+        var paragraphs = document.getElementsByTagName("p");
+        console.log(paragraphs);
+
+        var description = document.querySelector(".description");
+        console.log(description)
+
+        var descriptions = document.querySelectorAll(".description");
+        console.log(descriptions)
+
+        // 2. Changing HTML Content
+        heading.innerHTML = "<span>Welcome</span>";
+        heading.textContent = "Javascript is working!";
+
+        // 3. Changing CSS Through JavaScript
+        heading.style.color = "red";
+        heading.style.backgroundColor = "blue";
+        heading.style.fontSize = "35px";
+        heading.style.textAlign = "center";
+        // heading.style.display = "none";
+
+        // 4. Changing Attributes
+        var image = document.getElementById("photo");
+        image.src = "images/new.jpg";
+        image.alt = "New photo";
+        image.setAttribute("src", "images/old.jpg");
+        console.log(image.getAttribute("src"));
+
+        // 5. Creating and Removing Elements
+        var list = document.getElementById("studentsList");
+        var item = document.createElement("li");
+        item.textContent = "Zainab";
+        list.appendChild(item);
+
+        item.remove();
+    </script>
+</body>
+</html>

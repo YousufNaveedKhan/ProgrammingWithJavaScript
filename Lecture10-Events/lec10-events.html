@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lec10 - Events</title>
+</head>
+
+<body id="bgColor">
+    <button onclick="greet()">Click Me 1</button>
+    <button id="btnGreet">Click Me 2</button>
+
+    <h2 id="heading">Hello</h2>
+    <button id="btnHeading">Change Heading</button>
+
+    <button id="darkMode">Dark Mode🌙</button>
+    <button id="lightMode">Light Mode☀</button>
+    <br>
+    <img src="images/old.jpg" alt="Old Photo" id="photo" width="150" height="150">
+    <br>
+    <button id="changeImg">Change Image</button>
+
+    <br><br><br>
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter username" required> 
+    <br>
+    <h3 id="result"></h3>
+
+    <br><br><br><br>
+
+    <form id="myForm">
+        <label for="studentNameame">Student Name:</label>
+        <input type="text" id="studentName" name="name" required>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <pre id="output"></pre>
+    <script>
+        // 1. onclick vs addEvent Listener
+        function greet() {
+            alert("Function executed using onClick()");
+        }
+
+        document.getElementById("btnGreet").addEventListener("click", () => {
+            alert("Function executed using addEventListener()");
+        });
+
+        // 2. Click event practical
+        var heading = document.getElementById("heading");
+        var btnHeading = document.getElementById("btnHeading");
+        btnHeading.addEventListener("click", () => {
+            heading.textContent = "Welcome to our website";
+        });
+
+        // Theme
+        var bgColor = document.getElementById("bgColor");
+
+        document.getElementById("darkMode").addEventListener("click", () => {
+            bgColor.style.color = "white";
+            bgColor.style.backgroundColor = "black";
+        });
+
+        document.getElementById("lightMode").addEventListener("click", () => {
+            bgColor.style.color = "black";
+            bgColor.style.backgroundColor = "white";
+        });
+
+        var photo = document.getElementById("photo");
+        var changeImgBtn = document.getElementById("changeImg");
+
+        changeImgBtn.addEventListener("click", () => {
+            photo.src = "images/new.jpg";
+            photo.alt = "New Photo";
+        });
+
+        // 3. Input Event Practical
+        var username = document.getElementById("username");
+        var result = document.getElementById("result");
+
+        username.addEventListener("input", () => {
+            result.textContent = `Hello, ${username.value}`;
+        });
+
+        // 4. Form Submit Practical
+        var myForm = document.getElementById("myForm");
+        var studentName = document.getElementById("studentName");
+        var output = document.getElementById("output");
+
+        myForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+            output.textContent = `Student Name: ${studentName.value}`;
+        });
+    </script>
+</body>
+
+</html>
